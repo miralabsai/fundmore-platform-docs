@@ -1,0 +1,27 @@
+/**
+ * Custom CSS for FundMore Platform Docs.
+ * Mira blue brand color scheme.
+ */
+
+:root {
+  --ifm-color-primary: #4361ee;
+  --ifm-color-primary-dark: #2745eb;
+  --ifm-color-primary-darker: #1937ea;
+  --ifm-color-primary-darkest: #122cc1;
+  --ifm-color-primary-light: #5f7df1;
+  --ifm-color-primary-lighter: #6d89f2;
+  --ifm-color-primary-lightest: #97a9f6;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #7c93f7;
+  --ifm-color-primary-dark: #5b78f5;
+  --ifm-color-primary-darker: #4b6af4;
+  --ifm-color-primary-darkest: #1a41f0;
+  --ifm-color-primary-light: #9daef9;
+  --ifm-color-primary-lighter: #adbcfa;
+  --ifm-color-primary-lightest: #dfe6fd;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
