@@ -4,6 +4,7 @@ const sidebars: SidebarsConfig = {
   clientSidebar: [
     'introduction',
     'authentication',
+    'link-generation-and-security',
     'b2c-borrower-portal',
     'b2b-loan-officer-portal',
     'ai-platform',

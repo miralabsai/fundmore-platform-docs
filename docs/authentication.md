@@ -409,8 +409,31 @@ POST /api/v1/auth/session/revoke
 
 ---
 
+## Link Generation & Security
+
+The platform generates secure, time-limited authentication links for all user types. Each link is protected by multiple layers of security:
+
+| User Type | Link Method | Key Security |
+|-----------|------------|-------------|
+| **Consumer (Borrower)** | Passwordless magic link | Signed state, one-time token, 60-min expiry |
+| **Employee (LO, Admin)** | Magic link or password | Tracked invitation, 7-day expiry, breach-checked passwords |
+| **Co-Borrower** | Passwordless magic link | Auto-linked to loan application, one-time token |
+
+All magic links are generated through **Stytch** (the platform's identity provider) and include:
+
+- **One-time use** — Tokens are consumed on first click and cannot be replayed
+- **Cryptographic integrity** — Tenant context (organization, branch, loan officer) is signed server-side to prevent tampering
+- **Server-side state** — Sensitive context is cached server-side and never exposed in the link URL
+- **Time-based expiry** — Links expire after 60 minutes; B2B invitations expire after 7 days
+- **Account lockout** — 10 failed authentication attempts trigger a 1-hour lockout
+
+For a complete description of how links are generated, validated, and secured for each user type, see **[Link Generation & Security](./link-generation-and-security)**.
+
+---
+
 ## Related Pages
 
+- [Link Generation & Security](./link-generation-and-security) — Detailed link generation flows, Stytch integration, and security architecture
 - [Borrower Portal](./b2c-borrower-portal) — What happens after B2C login
 - [Loan Officer Portal](./b2b-loan-officer-portal) — What happens after B2B login
 - [POS Flow Reference](./pos-flow-reference) — LO Auth and Multi-Tenant diagrams
